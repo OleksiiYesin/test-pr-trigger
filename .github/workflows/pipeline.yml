@@ -14,7 +14,15 @@ jobs:
   testing:
     runs-on: ubuntu-latest
     steps:
+      - name: GIT checkout
+        uses: actions/checkout@v2
+    
       - name: Hello
         run: |
+          sleep 3
           echo "Hello" ${{ github.actor }}
-          
+      
+      - name: Test Version
+        run: |
+          sleep 3
+          grep Module_Version *.txt | cut -d \" -f2
