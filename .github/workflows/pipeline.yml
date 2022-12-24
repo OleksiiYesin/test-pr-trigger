@@ -1,0 +1,20 @@
+name: Testing PR triggers
+
+on:
+  push:
+    branches:
+      - "develop"
+      - "main"
+  pull_request_target:
+    branches:
+      - "develop"
+      - "main"
+
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello
+        run: |
+          echo "Hello " ${{ github.event.actor }}
+          
