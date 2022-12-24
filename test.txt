@@ -1,1 +1,1 @@
-Module_Version = "0.1.0"
+Module_Version = "0.2.0"
