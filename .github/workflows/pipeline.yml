@@ -18,4 +18,8 @@ jobs:
         run: |
           sleep 3
           echo "Hello" ${{ github.actor }}
-          
+      
+      - name: Test Version
+        run: |
+          sleep 3
+          grep Module_Version *.txt | cut -d \" -f2
