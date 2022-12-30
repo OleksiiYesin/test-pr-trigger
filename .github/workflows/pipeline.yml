@@ -20,7 +20,7 @@ jobs:
       - name: GIT checkout
         uses: actions/checkout@v2
         with:
-          ref: "${{ github.event.pull_request.base_ref}}"
+          ref: "${{ github.event.pull_request.base_ref }}"
     
       - name: Hello
         run: |
