@@ -26,3 +26,10 @@ jobs:
         run: |
           sleep 3
           grep Module_Version *.txt | cut -d \" -f2
+          
+      - name: TerraDoc setup
+        uses: lablabs/setup-terraform-docs@v1
+      
+      - name: Check terradoc
+        run: |
+          terraform-docs -v
