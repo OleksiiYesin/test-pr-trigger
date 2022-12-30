@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: GIT checkout
         uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head_ref }}
     
       - name: Hello
         run: |
@@ -27,9 +29,9 @@ jobs:
           sleep 3
           grep Module_Version *.txt | cut -d \" -f2
           
-      - name: Should generate README.md
-        uses: Dirrk/terraform-docs@v1.0.8
-        with:
-          working-dir: ./
-          git-push: true
-          git-commit-message: "terraform-docs: automated action by PR"
+      # - name: Should generate README.md
+      #   uses: Dirrk/terraform-docs@v1.0.8
+      #   with:
+      #     working-dir: ./
+      #     git-push: true
+      #     git-commit-message: "terraform-docs: automated action by PR"
