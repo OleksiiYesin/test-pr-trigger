@@ -23,6 +23,8 @@ jobs:
         run: |
           sleep 3
           echo "Hello" ${{ github.actor }}
+          echo "head_ref:" ${{ github.event.pull_request.head_ref }}
+          echo "base_ref:" ${{ github.event.pull_request.base_ref }}
       
       - name: Test Version
         run: |
