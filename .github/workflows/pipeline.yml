@@ -27,9 +27,9 @@ jobs:
           sleep 3
           grep Module_Version *.txt | cut -d \" -f2
           
-      - name: TerraDoc setup
-        uses: lablabs/setup-terraform-docs@v1
-      
-      - name: Check terradoc
-        run: |
-          terraform-docs -v
+      - name: Should generate README.md
+        uses: ./
+        with:
+          working-dir: ./
+          git-push: true
+          git-commit-message: "terraform-docs: automated action"
