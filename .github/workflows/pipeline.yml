@@ -28,7 +28,7 @@ jobs:
           grep Module_Version *.txt | cut -d \" -f2
           
       - name: Should generate README.md
-        uses: ./
+        uses: Dirrk/terraform-docs@v1.0.8
         with:
           working-dir: ./
           git-push: true
