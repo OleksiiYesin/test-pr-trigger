@@ -17,7 +17,7 @@ jobs:
       - name: GIT checkout
         uses: actions/checkout@v2
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.event.pull_request_target.head.sha }}
     
       - name: Hello
         run: |
