@@ -9,6 +9,9 @@ on:
     branches:
       - "develop"
       - "main"
+  pull_request:
+    branches:
+      - "feature/*"
 
 jobs:
   testing:
@@ -17,12 +20,14 @@ jobs:
       - name: GIT checkout
         uses: actions/checkout@v2
         with:
-          ref: ${{ github.event.pull_request.head_ref }}
+          ref: "${{ github.event.pull_request.head.sha }}"
     
       - name: Hello
         run: |
           sleep 3
           echo "Hello" ${{ github.actor }}
+          echo "head_ref:" ${{ github.event.pull_request.head_ref }}
+          echo "base_ref:" ${{ github.event.pull_request.base_ref }}
       
       - name: Test Version
         run: |
